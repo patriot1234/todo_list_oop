@@ -1,8 +1,8 @@
-# ToDo List OOP
+# Todo List cli OOP
 
 A simple command-line ToDo List application developed with **Python** and **Object-Oriented Programming (OOP)**.
 
-This project is a refactored version of a basic ToDo application. It uses classes, JSON for data persistence, environment variables for configuration, and `argparse` for command-line interaction.
+This project is a refactored version of a basic Todo application. It uses classes, JSON for data persistence, environment variables for configuration, and `argparse` for command-line interaction.
 
 ---
 
