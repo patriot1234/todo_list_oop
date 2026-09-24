@@ -4,28 +4,29 @@ from pathlib import Path
 import os
 import json
 
+
 class Storage:
+    """Handle loading and saving tasks in a JSON file."""
+
     def __init__(self):
+        """Initialize storage and determine the JSON file path."""
         load_dotenv()
-        filename = os.getenv("TASKS_FILE", "tasks.json")
+        filename = os.getenv("TASKS_FILE", "data/tasks.json")
 
         root = Path(__file__).resolve().parent.parent
         self.file_path = root / filename
-        
-
 
     def load(self):
-        print(self.file_path)
+        """Load and return tasks from the JSON file."""
 
+        print(self.file_path)
         with self.file_path.open("r", encoding="utf-8") as file:
             obj_list = json.load(file)
-    
+
         return obj_list
 
-    
-    def save(self,object):
+    def save(self, object):
+        """Save the given task data to the JSON file."""
+
         with self.file_path.open("w", encoding="utf-8") as file:
             json.dump(object, file, indent=4)
-
-        
-

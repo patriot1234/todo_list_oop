@@ -1,16 +1,25 @@
 from datetime import datetime
 
+
 class Task:
-    def __init__(self, id:int, title: str, created_at: str=None, status= False):
-        self.id=id
-        self.title=title
-        self.created_at=created_at or datetime.now().strftime("%Y-%m-%d  %H:%M")
-        self.status=status
+    """Represent a single task in the Todo list."""
+
+    def __init__(self, id: int, title: str, created_at: str = None, status=False):
+        """Initialize a task with its ID, title, creation time, and status."""
+        self.id = id
+        self.title = title
+        self.created_at = created_at or datetime.now().strftime("%Y-%m-%d  %H:%M")
+        self.status = status
 
     def __str__(self):
-        return f"{self.id}\t{self.title}\t{self.created_at}\t{self.status}\n"
+        """Return a formatted string representation of the task."""
+        return f"{self.id:<8}{self.title:<15}{self.created_at:<25}{self.status}\n"
 
     def task_dict(self):
-        return {"id" : self.id , "title" :self.title , "created_at":self.created_at , "status" : self.status}
-    
-
+        """Return the task data as a dictionary."""
+        return {
+            "id": self.id,
+            "title": self.title,
+            "created_at": self.created_at,
+            "status": self.status,
+        }
